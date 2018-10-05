@@ -30,88 +30,55 @@ public class MainActivity extends AppCompatActivity {
         b10=findViewById(R.id.button10);
         b11=findViewById(R.id.button11);
         b12=findViewById(R.id.button12);
+
         edit = findViewById(R.id.Text1);
+
+        //Added b14 findViewById to avoid crash when 0 button is clicked
+        b14 = findViewById(R.id.button14);
     }
 
     public void one(View view) {
-
-        s=edit.getText().toString();
-        sb=b1.getText().toString();
-        sb=b1.getText().toString();
-        edit.setText(s+sb);
-
+        setTextFromButton(b1);
     }
 
     public void two(View view) {
-
-        s=edit.getText().toString();
-        sb=b2.getText().toString();
-        edit.setText(s+sb);
-
+        setTextFromButton(b2);
     }
 
     public void three(View view) {
-
-        s=edit.getText().toString();
-        sb=b3.getText().toString();
-        edit.setText(s+sb);
-
+        setTextFromButton(b3);
     }
 
     public void four(View view) {
-
-        s=edit.getText().toString();
-        sb=b5.getText().toString();
-        edit.setText(s+sb);
+        setTextFromButton(b5);
 
     }
 
     public void five(View view) {
 
-        s=edit.getText().toString();
-        sb=b6.getText().toString();
-        edit.setText(s+sb);
+        setTextFromButton(b6);
 
     }
 
     public void six(View view) {
-
-        s=edit.getText().toString();
-        sb=b7.getText().toString();
-        edit.setText(s+sb);
-
+       setTextFromButton(b7);
     }
 
     public void seven(View view) {
-
-        s=edit.getText().toString();
-        sb=b9.getText().toString();
-        edit.setText(s+sb);
-
+        setTextFromButton(b9);
     }
 
     public void eight(View view) {
-
-        s=edit.getText().toString();
-        sb=b10.getText().toString();
-        edit.setText(s+sb);
-
+        setTextFromButton(b10);
     }
 
     public void nine(View view) {
 
-        s=edit.getText().toString();
-        sb=b11.getText().toString();
-        edit.setText(s+sb);
-
+        setTextFromButton(b11);
     }
 
     public void zero(View view) {
-
-        s=edit.getText().toString();
-        sb=b14.getText().toString();
-        edit.setText(s+sb);
-
+       setTextFromButton(b14);
     }
 
     public void reset(View view) {
@@ -185,5 +152,13 @@ public class MainActivity extends AppCompatActivity {
             edit.setText(c+"");
 
         }
+    }
+
+    /** Get text from button and concatenate with edit**/
+    public void setTextFromButton(Button button)
+    {
+        s = edit.getText().toString();
+        sb = button.getText().toString();
+        edit.setText(s+sb);
     }
 }
